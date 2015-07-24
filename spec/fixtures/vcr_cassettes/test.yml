@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://api.exbico.ru/se/crm_v3_1/
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="utf-8"?>
+        <credit_rating>
+          <auth>
+            <login>fake_login</login>
+            <password>fake_password</password>
+          </auth>
+          <person>
+            <lastname>Иванов</lastname>
+            <firstname>Иван</firstname>
+            <middlename>Иванович</middlename>
+            <datebirth>18.12.1954</datebirth>
+          </person>
+          <document>
+            <type>21</type>
+            <number>666666</number>
+            <series>4444</series>
+            <issuedate>17.06.2004</issuedate>
+          </document>
+          <loan>
+            <loantype>1</loantype>
+            <loanamount>50000</loanamount>
+            <loanduration>30</loanduration>
+          </loan>
+          <istest>1</istest>
+        </credit_rating>
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '2258'
+      Content-Type:
+      - text/xml; charset=windows-1251
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/7.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      Set-Cookie:
+      - ".ASPXAUTH=1CC5C9A8BB1EC1497E845336499A071E173FDABD4771AA580BD1AB42FED32715BE8BAE49DF5FCBC3295314B8B0A0C060D47B7A607B28B9F08947746768E63FAC1E336A2A7502C17B4D26007F0D7920BE18362724317555BD02827B4DB86B6BEC;
+        path=/; HttpOnly"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Date:
+      - Thu, 23 Jul 2015 10:09:08 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0id2luZG93cy0xMjUxIj8+PHJlc3VsdCB4bWxu
+        czp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4bWxuczp4
+        c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIj48aGVhZGVyPjx2ZXJzaW9uPjMu
+        MDwvdmVyc2lvbj48cHJvZHVjdElkPjg8L3Byb2R1Y3RJZD48cHJvZHVjdD5DcmVkaXRSYXRpbmc8
+        L3Byb2R1Y3Q+PHJlcG9ydElkPjEyMzQ1NjwvcmVwb3J0SWQ+PGRhdGV0aW1lPjIwMTUtMDctMjNU
+        MTM6MDk6MDcuNjg2MDc4MiswMzowMDwvZGF0ZXRpbWU+PGFzeW5jPjA8L2FzeW5jPjxpc3Rlc3Q+
+        MTwvaXN0ZXN0PjwvaGVhZGVyPjxyZXF1ZXN0PjxhdXRoPjxsb2dpbj5mYWtlX2xvZ2luPC9sb2dp
+        bj48cGFzc3dvcmQ+KioqKioqKio8L3Bhc3N3b3JkPjwvYXV0aD48cGVyc29uPjxsYXN0bmFtZT7I
+        4uDt7uI8L2xhc3RuYW1lPjxmaXJzdG5hbWU+yOLg7TwvZmlyc3RuYW1lPjxtaWRkbGVuYW1lPsji
+        4O3u4uj3PC9taWRkbGVuYW1lPjxkYXRlYmlydGg+MTguMTIuMTk1NDwvZGF0ZWJpcnRoPjwvcGVy
+        c29uPjxkb2N1bWVudD48dHlwZT4yMTwvdHlwZT48bnVtYmVyPjY2NjY2NjwvbnVtYmVyPjxzZXJp
+        ZXM+NDQ0NDwvc2VyaWVzPjxpc3N1ZWRhdGU+MTcuMDYuMjAwNDwvaXNzdWVkYXRlPjwvZG9jdW1l
+        bnQ+PGxvYW4+PGxvYW50eXBlPjE8L2xvYW50eXBlPjxsb2FuYW1vdW50PjUwMDAwPC9sb2FuYW1v
+        dW50Pjxsb2FuZHVyYXRpb24+MzA8L2xvYW5kdXJhdGlvbj48L2xvYW4+PC9yZXF1ZXN0PjxyZXNw
+        b25zZT48UmVzdWx0PjxLZXk+MTIzNDU2PC9LZXk+PC9SZXN1bHQ+PEJvZHk+PGZhc1Jlc3BvbnNl
+        PjxkYXRlPjIwMDQtMDctMTE8L2RhdGU+PGxvYW5SYXRpbmc+PGNvdW50PjQ8L2NvdW50PjxndWFy
+        YW50ZWU+MDwvZ3VhcmFudGVlPjxsaW1pdD4zMjQxOTk8L2xpbWl0PjxiYWxhbmNlPjMzMDcyMDwv
+        YmFsYW5jZT48bWF4Q2xvc2VEdD4yMDE5LTEyLTMxPC9tYXhDbG9zZUR0PjxkZWxheT45PC9kZWxh
+        eT48dG90YWxPdmVyZHVlPjEyMzQ1NjwvdG90YWxPdmVyZHVlPjxtYXhEZWxlYXk+OTwvbWF4RGVs
+        ZWF5PjxjbG9zZWROZWdhdGl2ZT5ZPC9jbG9zZWROZWdhdGl2ZT48Y291bnREdWUzMF82MEluT3Bl
+        bmVkQWNjcz4wPC9jb3VudER1ZTMwXzYwSW5PcGVuZWRBY2NzPjxjb3VudER1ZTMwXzYwSW5DbG9z
+        ZWRBY2NzPjA8L2NvdW50RHVlMzBfNjBJbkNsb3NlZEFjY3M+PGNvdW50RHVlNjBfOTBJbk9wZW5l
+        ZEFjY3M+MDwvY291bnREdWU2MF85MEluT3BlbmVkQWNjcz48Y291bnREdWU2MF85MEluQ2xvc2Vk
+        QWNjcz4wPC9jb3VudER1ZTYwXzkwSW5DbG9zZWRBY2NzPjxjb3VudER1ZTkwUGx1c0luT3BlbmVk
+        QWNjcz42NzwvY291bnREdWU5MFBsdXNJbk9wZW5lZEFjY3M+PGNvdW50RHVlOTBQbHVzSW5DbG9z
+        ZWRBY2NzPjQ4PC9jb3VudER1ZTkwUGx1c0luQ2xvc2VkQWNjcz48L2xvYW5SYXRpbmc+PGRvY0No
+        ZWNrPjxmb3VuZD5ZPC9mb3VuZD48aGFzTmV3ZXI+TjwvaGFzTmV3ZXI+PGxvc3Q+TjwvbG9zdD48
+        aW52YWxpZD5OPC9pbnZhbGlkPjx3YW50ZWQ+Tjwvd2FudGVkPjwvZG9jQ2hlY2s+PGlucXVpcmll
+        cz48d2Vlaz4wPC93ZWVrPjx0d29XZWVrcz4wPC90d29XZWVrcz48bW9udGg+MjwvbW9udGg+PG92
+        ZXJhbGw+MTQyPC9vdmVyYWxsPjwvaW5xdWlyaWVzPjxjaGVja3M+PGNoZWNrPjxkYXRlPjIwMTQt
+        MDctMjFUMTU6MTA6MTA8L2RhdGU+PGlzT3duPlk8L2lzT3duPjxsb2FuVHlwZT7N4Ovo9+377Og8
+        L2xvYW5UeXBlPjxsb2FuQW1vdW50PjE1MDAwMDwvbG9hbkFtb3VudD48bG9hbkR1cmF0aW9uPjMw
+        IOTt5ek8L2xvYW5EdXJhdGlvbj48L2NoZWNrPjxjaGVjaz48ZGF0ZT4yMDE0LTA3LTIxVDE1OjA4
+        OjU0PC9kYXRlPjxpc093bj5OPC9pc093bj48bG9hblR5cGU+zeDr6Pft++zoPC9sb2FuVHlwZT48
+        bG9hbkFtb3VudD4xNTAwMDA8L2xvYW5BbW91bnQ+PGxvYW5EdXJhdGlvbj4zMCDk7eXpPC9sb2Fu
+        RHVyYXRpb24+PC9jaGVjaz48Y2hlY2s+PGRhdGU+MjAxNC0wNy0yMVQxNDoyNDowNTwvZGF0ZT48
+        aXNPd24+TjwvaXNPd24+PGxvYW5UeXBlPs3g6+j37fvs6DwvbG9hblR5cGU+PGxvYW5BbW91bnQ+
+        MTUwMDAwPC9sb2FuQW1vdW50Pjxsb2FuRHVyYXRpb24+MzAg5O3l6TwvbG9hbkR1cmF0aW9uPjwv
+        Y2hlY2s+PC9jaGVja3M+PC9mYXNSZXNwb25zZT48L0JvZHk+PC9yZXNwb25zZT48c3RhdHVzPjE8
+        L3N0YXR1cz48ZXJyb3JzIC8+PHdhcm5pbmcgLz48L3Jlc3VsdD4=
+    http_version:
+  recorded_at: Thu, 23 Jul 2015 10:09:14 GMT
+recorded_with: VCR 2.9.3

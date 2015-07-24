@@ -1,0 +1,3 @@
+# Ignore RVM settings
+.ruby-version
+.ruby-gemset

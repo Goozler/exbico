@@ -1,0 +1,12 @@
+= Exbico
+
+This project rocks and uses MIT-LICENSE.
+
+= Example of usage
+
+  ex = Exbico.new('login', 'password')
+  ex.params = {person: {}, document: {}, loan: {}, test: true}
+  ex.query
+  puts ex.status
+  puts ex.response
+  puts ex.errors

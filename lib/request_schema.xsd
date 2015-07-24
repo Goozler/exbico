@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="credit_rating">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="auth">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="login" type="xs:string"/>
+              <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="person">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lastname" type="xs:string"/>
+              <xs:element name="firstname" type="xs:string"/>
+              <xs:element name="middlename" type="xs:string"/>
+              <xs:element name="gender" type="xs:unsignedByte" minOccurs="0"/>
+              <xs:element name="datebirth">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="\d{2}.\d{2}.\d{4}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="document">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="type" type="xs:unsignedByte"/>
+              <xs:element name="number" type="StStr6"/>
+              <xs:element name="series" type="StStr4"/>
+              <xs:element name="issuecountry" type="xs:string" minOccurs="0"/>
+              <xs:element name="issuedate" type="xs:string" minOccurs="0"/>
+              <xs:element name="issueauthority" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="loan">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="loantype" type="xs:unsignedByte"/>
+              <xs:element name="loanamount" type="xs:unsignedInt"/>
+              <xs:element name="loanduration" type="xs:unsignedByte"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="istest" type="xs:unsignedByte" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="StDate">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{2}[.]\d{2}[.]\d{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StINN">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{10}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StOGRN">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{13}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StStr4">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StStr6">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{6}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Stphone">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:pattern value="[0-9]"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

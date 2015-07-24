@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<result xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <header>
+    <productId>2</productId>
+    <product>CreditRating</product>
+    <reportId>189682</reportId>
+    <datetime>2014-02-12T09:50:33.7611015+04:00</datetime>
+    <async>0</async>
+    <istest>0</istest>
+  </header>
+  <request>
+    <auth>
+      <login>логин</login>
+      <password>*****</password>
+    </auth>
+    <person>
+      <firstname>Николай</firstname>
+      <lastname>Николаев</lastname>
+      <middlename>Николаевич</middlename>
+      <datebirth>19.08.1969</datebirth>
+    </person>
+    <document>
+      <type>21</type>
+      <number>666666</number>
+      <series>7555</series>
+      <issuedate>27.02.2005</issuedate>
+    </document>
+    <loan>
+      <loantype>1</loantype>
+      <loanamount>150000</loanamount>
+      <loanduration>30</loanduration>
+    </loan>
+  </request>
+  <response>
+    <Result>
+      <Key>3556</Key>
+      <Code>0</Code>
+      <Message>Запрос обработан</Message>
+    </Result>
+    <Body>
+      <fasResponse>
+        <date>2014-08-19</date>
+        <loanRating>
+          <count>4</count>
+          <guarantee>0</guarantee>
+          <limit>361400</limit>
+          <balance>293170</balance>
+          <maxCloseDt>2019-04-15</maxCloseDt>
+          <delay>4</delay>
+          <totalOverdue>100262</totalOverdue>
+          <maxDeleay>5</maxDeleay>
+          <closedNegative>Y</closedNegative>
+          <countDue30_60InOpenedAccs>0</countDue30_60InOpenedAccs>
+          <countDue30_60InClosedAccs>1</countDue30_60InClosedAccs>
+          <countDue60_90InOpenedAccs>0</countDue60_90InOpenedAccs>
+          <countDue60_90InClosedAccs>0</countDue60_90InClosedAccs>
+          <countDue90PlusInOpenedAccs>35</countDue90PlusInOpenedAccs>
+          <countDue90PlusInClosedAccs>48</countDue90PlusInClosedAccs>
+        </loanRating>
+        <docCheck>
+          <found>Y</found>
+          <hasNewer>N</hasNewer>
+          <lost>N</lost>
+          <invalid>N</invalid>
+          <wanted>N</wanted>
+        </docCheck>
+        <inquiries>
+          <week>1</week>
+          <twoWeeks>1</twoWeeks>
+          <month>7</month>
+          <overall>89</overall>
+        </inquiries>
+        <checks>
+          <check>
+            <date>2014-04-14T11:37:41</date>
+            <isOwn>Y</isOwn>
+            <loanType>Наличными</loanType>
+            <loanAmount>150000</loanAmount>
+            <loanDuration>30 дней</loanDuration>
+          </check>
+          <check>
+            <date>2014-02-12T09:49:36</date>
+            <isOwn>Y</isOwn>
+            <loanType>Наличными</loanType>
+            <loanAmount>150000</loanAmount>
+            <loanDuration>30 дней</loanDuration>
+          </check>
+        </checks>
+      </fasResponse>
+    </Body>
+  </response>
+  <status>1</status>
+  <errors />
+  <warning />
+</result>
