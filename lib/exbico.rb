@@ -51,9 +51,7 @@ class Exbico
   end
 
   def xml
-    @xml = Exbico::XML.new(@login, @password, @params, @test).build
-    validate_xml
-    @xml
+    Exbico::XML.new(@login, @password, @params, @test).build
   end
 
   private
@@ -64,7 +62,7 @@ class Exbico
     elsif !hash_valid?
       @errors = ['params should have keys: person, document, loan']
     else
-      xml  
+      validate_xml
     end
     @errors.nil?
   end
@@ -78,8 +76,9 @@ class Exbico
   def validate_xml
     xsd_file = File.read(File.expand_path('../request_schema.xsd', __FILE__))
     xsd = Nokogiri::XML::Schema(xsd_file)
-    @errors = ['xml is invalid'] unless xsd.valid?(@xml)
-    xsd.validate(@xml).each do |error|
+    xml_builded = xml
+    @errors = ['xml is invalid'] unless xsd.valid?(xml_builded)
+    xsd.validate(xml_builded).each do |error|
       @errors << error.message
     end
   end

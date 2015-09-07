@@ -177,15 +177,15 @@ describe Exbico do
     it 'set true option' do
       exbico.test = false
       expect(exbico.test).to be_falsey
-    end  
+    end
 
     context 'when got parameter not false' do
       it 'set option to true' do
         exbico.test = 'A'
         expect(exbico.test).to be_truthy
-      end 
+      end
     end
-  end  
+  end
 
   describe '#test' do
     it 'false as default' do
