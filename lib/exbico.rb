@@ -10,12 +10,13 @@ class Exbico
   base_uri 'http://api.exbico.ru/se/crm_v3_1'
   attr_accessor :login, :params
   attr_writer :password
-  attr_reader :errors, :response, :xml, :status
+  attr_reader :errors, :response, :status, :test
 
   def initialize(login, password)
-    @login = login
+    @login    = login
     @password = password
-    @status = 'new'
+    @status   = 'new'
+    @test     = false
   end
 
   def valid?
@@ -45,6 +46,16 @@ class Exbico
     validate_params
   end
 
+  def test=(param)
+    @test = !(param == false)
+  end
+
+  def xml
+    @xml = Exbico::XML.new(@login, @password, @params, @test).build
+    validate_xml
+    @xml
+  end
+
   private
 
   def validate_params
@@ -53,7 +64,7 @@ class Exbico
     elsif !hash_valid?
       @errors = ['params should have keys: person, document, loan']
     else
-      build_xml
+      xml  
     end
     @errors.nil?
   end
@@ -62,11 +73,6 @@ class Exbico
     [:person, :document, :loan].all? do |k|
       @params.key?(k) && @params[k].is_a?(Hash)
     end
-  end
-
-  def build_xml
-    @xml = Exbico::XML.new(@login, @password, @params).build
-    validate_xml
   end
 
   def validate_xml

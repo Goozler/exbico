@@ -1,10 +1,11 @@
 class Exbico
   # XML builder for query
   class XML
-    def initialize(login, password, params)
-      @login = login
+    def initialize(login, password, params, test)
+      @login    = login
       @password = password
-      @params  = params
+      @params   = params
+      @test     = test
     end
 
     def build
@@ -24,7 +25,7 @@ class Exbico
 
     def test?
       @is_test unless @is_test.nil?
-      @is_test = @params.key?(:test)
+      @is_test = @params.key?(:test) || @test == true
     end
 
     def build_auth(xml)

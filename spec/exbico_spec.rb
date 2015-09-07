@@ -85,6 +85,22 @@ describe Exbico do
           expect(exbico.xml.css('istest').text).to eq('0')
         end
       end
+
+      context 'when test option is true' do
+        it 'xml should have istest key with value 1' do
+          exbico.params = empty_params
+          exbico.test = true
+          expect(exbico.xml.css('istest').text).to eq('1')
+        end
+      end
+
+      context 'when test option is true' do
+        it 'xml should have istest key with value 0' do
+          exbico.params = empty_params
+          exbico.test = false
+          expect(exbico.xml.css('istest').text).to eq('0')
+        end
+      end
     end
   end
 
@@ -154,6 +170,26 @@ describe Exbico do
       it 'is true' do
         expect(exbico_with_params.valid?).to be_truthy
       end
+    end
+  end
+
+  describe '#test=' do
+    it 'set true option' do
+      exbico.test = false
+      expect(exbico.test).to be_falsey
+    end  
+
+    context 'when got parameter not false' do
+      it 'set option to true' do
+        exbico.test = 'A'
+        expect(exbico.test).to be_truthy
+      end 
+    end
+  end  
+
+  describe '#test' do
+    it 'false as default' do
+      expect(exbico.test).to be_falsey
     end
   end
 end
